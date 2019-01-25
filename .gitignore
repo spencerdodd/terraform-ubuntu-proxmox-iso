@@ -1,4 +1,4 @@
 work/*
 .DS_Store
-terraform
-terraform.pub
+id_rsa
+id_rsa.pub

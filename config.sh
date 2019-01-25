@@ -4,7 +4,7 @@
 : ${NICKNAME:="terraform"}
 
 # Arguments given to the download router.
-: ${VERSION:="14.04.5"}
+: ${VERSION:="16.04.5"}
 : ${DISTRO:="server"}
 : ${RELEASE:="latest"}
 
@@ -13,17 +13,17 @@
 
 # Hardcoded host information.
 : ${HOST:="tfnode"}
-: ${DOMAIN:="terraform.io"}
+: ${DOMAIN:="coastalsec.io"}
 : ${ROOT_PASSWORD:=`openssl rand -base64 24`}
-: ${USERNAME:="terraform"}
+: ${USERNAME:="coastaladmin"}
 : ${PASSWORD:=`openssl rand -base64 24`}
 
 # SSH key to be authorized in virtual machines.
-: ${PRIVATE_KEY:="terraform"}
+: ${PRIVATE_KEY:="id_rsa"}
 
 if [ ! -f "$PRIVATE_KEY" ]; then
 	ssh-keygen -t rsa -b 4096 -N "" -C "$USERNAME@$DOMAIN" -f "$PRIVATE_KEY"
 fi
 
 chmod 600 "$PRIVATE_KEY"
-: ${PUBLIC_KEY:="terraform.pub"}
+: ${PUBLIC_KEY:="id_rsa.pub"}
